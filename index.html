@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple JQuery Parallax scrolling</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <section class="zoom">
+        <img src="text.png" alt="text" class="text">
+        <img src="mountain1.png" alt="" class="layer1">
+        <img src="mountain2.png" alt="" class="layer2">
+    </section>
+    <section class="content">
+        <h2>Simple background parallax using jquery</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio deserunt qui ipsum cupiditate, voluptas impedit atque tempora velit temporibus. Pariatur a reprehenderit molestias. At praesentium esse unde! Hic voluptatum iste ipsa tenetur? Ullam incidunt unde, voluptatibus earum cumque libero.</p>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(window).scroll(function(){
+            var scroll = $(window).scrollTop();
+            $('.layer1').css({
+                width: (100 + scroll/5) + "%"
+            })
+            $('.layer2').css({
+                width: (100 + scroll/5) + "%",
+                left: scroll/50 + "%"
+            })
+            $('.text').css({
+                top: - scroll/20 + "%"
+            })
+        })
+    </script>
+</body>
+</html>
